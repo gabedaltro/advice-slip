@@ -19,6 +19,9 @@ const styles = makeStyles((theme) => ({
       width: 30,
       left: "45%",
     },
+    "&:hover": {
+      filter: "brightness(1.75)",
+    },
   },
 }));
 
