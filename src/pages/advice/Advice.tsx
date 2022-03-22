@@ -20,7 +20,7 @@ const styles = makeStyles((theme) => ({
       left: "45%",
     },
     "&:hover": {
-      filter: "brightness(1.75)",
+      boxShadow: "0rem 0rem 1rem #52ffa8",
     },
   },
 }));
