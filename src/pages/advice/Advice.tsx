@@ -1,6 +1,5 @@
 import React from "react";
-import { Casino } from "@mui/icons-material";
-import { Box, Icon, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Advice } from "../../types/advice";
 import { makeStyles } from "@material-ui/core";
 import { useApp } from "../../hooks/app";
@@ -12,25 +11,13 @@ const styles = makeStyles((theme) => ({
       maxWidth: 280,
     },
   },
-  box: {
-    position: "absolute",
-    left: "42.5%",
-    [theme.breakpoints.up("md")]: {
-      width: 30,
-      left: "45%",
-    },
-    "&:hover": {
-      boxShadow: "0rem 0rem 1rem #52ffa8",
-    },
-  },
 }));
 
 interface AdviceProps {
-  makeAdvice: () => void;
   advice: Advice;
 }
 
-export const AdvicePage: React.FC<AdviceProps> = ({ advice, makeAdvice }) => {
+export const AdvicePage: React.FC<AdviceProps> = ({ advice }) => {
   const classes = styles();
   const app = useApp();
 
@@ -66,25 +53,6 @@ export const AdvicePage: React.FC<AdviceProps> = ({ advice, makeAdvice }) => {
           ) : (
             <img src="/assets/pattern-divider-desktop.svg" alt="divider" />
           )}
-        </Box>
-
-        <Box
-          sx={{
-            backgroundColor: "hsl(150, 100%, 66%)",
-            padding: "12px",
-            marginTop: "75px",
-            cursor: "pointer",
-            color: "black",
-            width: "10%",
-            borderRadius: "100%",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          className={classes.box}
-        >
-          <Icon onClick={makeAdvice}>
-            <Casino />
-          </Icon>
         </Box>
       </Box>
     </Box>
